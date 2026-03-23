@@ -1,7 +1,6 @@
 // ProfitMaster — Le Calculateur de Rentabilite Universel
 // Stack : React + jsPDF (CDN via window)
 // PWA-ready, Mobile First, Dark Premium, Paywall PDF integre
-
 import { useState, useEffect, useCallback } from ‘react’;
 
 const STRIPE_LINK = ‘https://buy.stripe.com/14A8wPadZ2MmbRF0A4a3u00’;
