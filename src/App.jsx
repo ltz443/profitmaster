@@ -122,6 +122,7 @@ function InputField({ label, id, value, onChange, placeholder, prefix, hint }) {
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder || '0'}
+          inputMode="decimal"
           style={{
             width: '100%',
             background: '#0A0B0F',
@@ -193,6 +194,19 @@ function ModalPaywall({ onClose, onPay }) {
   );
 }
 
+// Section definie ici (stable)
+function Section({ title, icon, children }) {
+  return (
+    <div style={{ background: '#111318', borderRadius: 16, padding: '22px 20px', marginBottom: 16, border: '1px solid #1A1E2A' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 18 }}>
+        <span style={{ fontSize: 18 }}>{icon}</span>
+        <h3 style={{ fontSize: 15, fontWeight: 800, color: '#4FFFA0' }}>{title}</h3>
+      </div>
+      {children}
+    </div>
+  );
+}
+
 export default function ProfitMaster() {
   const [fields, setFields] = useState({
     prixVente: '', matieres: '', transport: '', outillage: '', autresFrais: '', heures: '', tauxHoraire: '', tauxCotisations: '21.2', tauxPersonnalise: '', tauxOption: '21.2',
@@ -227,20 +241,10 @@ export default function ProfitMaster() {
 
   useEffect(() => {
     const style = document.createElement('style');
-    style.textContent = `* { margin: 0; padding: 0; box-sizing: border-box; } body { background: #0A0B0F; color: #E8EDF5; font-family: sans-serif; } @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(79,255,160,0.3); } 50% { box-shadow: 0 0 20px 6px rgba(79,255,160,0.12); } } input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; } select { -webkit-appearance: none; appearance: none; }`;
+    style.textContent = `* { margin: 0; padding: 0; box-sizing: border-box; } body { background: #0A0B0F; color: #E8EDF5; font-family: sans-serif; } input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; } select { -webkit-appearance: none; appearance: none; }`;
     document.head.appendChild(style);
     return () => document.head.removeChild(style);
   }, []);
-
-  const Section = ({ title, icon, children }) => (
-    <div style={{ background: '#111318', borderRadius: 16, padding: '22px 20px', marginBottom: 16, border: '1px solid #1A1E2A' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 18 }}>
-        <span style={{ fontSize: 18 }}>{icon}</span>
-        <h3 style={{ fontSize: 15, fontWeight: 800, color: '#4FFFA0' }}>{title}</h3>
-      </div>
-      {children}
-    </div>
-  );
 
   return (
     <div style={{ minHeight: '100vh', background: '#0A0B0F', paddingBottom: 40 }}>
