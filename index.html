@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0A0B0F" />
+    <meta name="description" content="ProfitMaster — Calculateur de rentabilité pour artisans, freelances et commerçants." />
+
+```
+<!-- ═══ PWA ═══ -->
+<link rel="manifest" href="/manifest.json" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="ProfitMaster" />
+<link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
+<!-- ═══ Favicon ═══ -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+
+<title>ProfitMaster — Calculateur de Rentabilité</title>
+
+<!-- ═══════════════════════════════════════════════
+     POLICES GOOGLE FONTS
+     · Syne      → Titres / Headings (700, 800, 900)
+     · Inter     → Corps de texte (400, 500, 600)
+     · DM Mono   → Chiffres & valeurs (400, 500)
+════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- ═══════════════════════════════════════════════
+     jsPDF — Génération de PDF côté client
+     Version : 2.5.1 (UMD build)
+     Expose : window.jspdf  →  const { jsPDF } = window.jspdf
+════════════════════════════════════════════════ -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+  integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfYzoRSAeHnQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<!-- ═══ Reset & Base CSS ═══ -->
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    background-color: #0A0B0F;
+    color: #E8EDF5;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Evite le scroll horizontal sur mobile */
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar stylée sur desktop */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0A0B0F; }
+  ::-webkit-scrollbar-thumb { background: #1E2230; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4FFFA0; }
+
+  /* Supprime les flèches des inputs number */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] { -moz-appearance: textfield; }
+</style>
+```
+
+  </head>
+
+  <body>
+    <!-- Point de montage React -->
+    <div id="root"></div>
+
+```
+<!-- ═══════════════════════════════════════════════
+     Votre bundle React sera injecté ici par Vite /
+     Create React App / Vercel au moment du build.
+     Ex. avec Vite : <script type="module" src="/src/main.jsx"></script>
+════════════════════════════════════════════════ -->
+<script type="module" src="/src/main.jsx"></script>
+```
+
+  </body>
+</html>
